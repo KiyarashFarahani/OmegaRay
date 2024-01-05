@@ -22,11 +22,12 @@ class QSTileService : TileService() {
         if (state == Tile.STATE_INACTIVE) {
             qsTile?.state = Tile.STATE_INACTIVE
             qsTile?.label = getString(R.string.app_name)
-            qsTile?.icon = Icon.createWithResource(applicationContext, R.drawable.ic_stat_name)
+            qsTile?.icon = Icon.createWithResource(applicationContext, R.mipmap.ic_launcher_foreground_small)
         } else if (state == Tile.STATE_ACTIVE) {
             qsTile?.state = Tile.STATE_ACTIVE
-            qsTile?.label = V2RayServiceManager.currentConfig?.remarks
-            qsTile?.icon = Icon.createWithResource(applicationContext, R.drawable.ic_stat_name)
+            //qsTile?.label = V2RayServiceManager.currentConfig?.remarks
+            qsTile?.label = "Connected"
+            qsTile?.icon = Icon.createWithResource(applicationContext, R.mipmap.ic_launcher_foreground_small)
         }
 
         qsTile?.updateTile()

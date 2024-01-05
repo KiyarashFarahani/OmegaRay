@@ -2,7 +2,7 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
         android:enabled="true"
-        android:icon="@drawable/ic_qu_switch_24dp"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:shortcutDisabledMessage="@string/app_widget_name"
         android:shortcutId="shortcuts_switch"
         android:shortcutLongLabel="@string/app_widget_name"

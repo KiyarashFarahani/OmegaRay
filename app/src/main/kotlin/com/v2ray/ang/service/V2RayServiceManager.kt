@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Color
+import android.graphics.drawable.Icon
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
@@ -26,6 +27,7 @@ import com.v2ray.ang.util.V2rayConfigUtil
 import go.Seq
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.launch
 import libv2ray.Libv2ray
 import libv2ray.V2RayPoint
@@ -34,6 +36,7 @@ import rx.Observable
 import rx.Subscription
 import java.lang.ref.SoftReference
 import java.util.concurrent.TimeUnit
+import kotlin.coroutines.coroutineContext
 import kotlin.math.min
 
 object V2RayServiceManager {
@@ -243,6 +246,7 @@ object V2RayServiceManager {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun showNotification() {
         val service = serviceControl?.get()?.getService() ?: return
         val startMainIntent = Intent(service, MainActivity::class.java)
@@ -276,8 +280,9 @@ object V2RayServiceManager {
                 }
 
         mBuilder = NotificationCompat.Builder(service, channelId)
-                .setSmallIcon(R.drawable.ic_stat_name)
-                .setContentTitle(currentConfig?.remarks)
+                .setSmallIcon(R.mipmap.ic_launcher_foreground_small)
+                //.setContentTitle(currentConfig?.remarks)
+                .setContentTitle("Connected")
                 .setPriority(NotificationCompat.PRIORITY_MIN)
                 .setOngoing(true)
                 .setShowWhen(false)
