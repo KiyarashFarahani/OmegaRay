@@ -90,7 +90,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     if (serverList.isNotEmpty()){
                         Log.v("Kiyarash", "this thing is called!")
                         mainViewModel.testAllRealPing()
-                        delay(1000)
+                        delay(1500)
 
                         val delay =
                             MmkvManager.decodeServerAffiliationInfo(serverList[0])?.testDelayMillis
