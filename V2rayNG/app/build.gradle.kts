@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.v2ray.ang"
+    namespace = "com.omegaRay.ang"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.v2ray.ang"
+        applicationId = "com.omegaRay.ang"
         minSdk = 21
         targetSdk = 35
         versionCode = 641
@@ -179,6 +179,7 @@ dependencies {
 
     // Multidex Support
     implementation(libs.multidex)
+    implementation(files("/Users/kiyarash/AndroidStudioProjects/OmegaRay/libv2ray.aar"))
 
     // Testing Libraries
     testImplementation(libs.junit)
